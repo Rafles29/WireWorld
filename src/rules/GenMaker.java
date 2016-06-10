@@ -7,7 +7,7 @@ public class GenMaker {
 		
 	}
 
-	public void doGen(Strip strip)
+	public Strip doGen(Strip strip)
 	{
 		Strip tempStrip = strip.duplicateStrip();
 		Tribunal judge = new SimpleRules();
@@ -18,6 +18,6 @@ public class GenMaker {
 				judge.determinate(strip,tempStrip,j,i);
 			}
 		}
-		strip=tempStrip;
+		return tempStrip;
 	}
 }

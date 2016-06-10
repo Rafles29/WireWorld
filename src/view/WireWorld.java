@@ -3,24 +3,15 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.JButton;
-import java.awt.GridLayout;
-import javax.swing.BoxLayout;
-import net.miginfocom.swing.MigLayout;
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.RowSpec;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JFormattedTextField;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JToggleButton;
+
+import model.Strip;
+import net.miginfocom.swing.MigLayout;
 
 public class WireWorld {
 
@@ -32,17 +23,35 @@ public class WireWorld {
 	JFormattedTextField frmtdtxtfldEndtxt;
 	JButton btnSaveFile;
 	JLabel lblControls;
+	JLabel lblSaveAndLoad;
 	JButton btnNewButton_1;
 	JButton btnNewButton;
+	private JToggleButton tglbtnOnoff;
 
 	/**
-	 * Launch the application.
+	 * Create the application.
 	 */
-	public static void main(String[] args) {
+	public WireWorld(Strip strip) {
+		frame = new JFrame();
+		panel = new MyPanel();
+		panel_1 = new JPanel();
+		lblSaveAndLoad = new JLabel("Game File");
+		btnLoadFile = new JButton("Load File");
+		frmtdtxtfldStarttxt = new JFormattedTextField();
+		frmtdtxtfldEndtxt = new JFormattedTextField();
+		btnSaveFile = new JButton("Save File");
+		lblControls = new JLabel("Controls");
+		btnNewButton_1 = new JButton("Start");
+		btnNewButton = new JButton("Stop");
+		tglbtnOnoff = new JToggleButton("ON/OFF");
+		panel.updateStrip(strip);
+		
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					WireWorld window = new WireWorld();
+					initialize();
+					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -51,58 +60,52 @@ public class WireWorld {
 	}
 
 	/**
-	 * Create the application.
-	 */
-	public WireWorld() {
-		initialize();
-		frame.setVisible(true);
-	}
-
-	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
+		
 		frame.setBounds(100, 100, 717, 578);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		panel = new MyPanel();
+		
 		frame.getContentPane().add(panel, BorderLayout.WEST);
 		
-		panel_1 = new JPanel();
-		frame.getContentPane().add(panel_1, BorderLayout.EAST);
-		panel_1.setLayout(new MigLayout("", "[120px,grow][55px]", "[][23px][][][][][][][][]"));
 		
-		JLabel lblSaveAndLoad = new JLabel("Game File");
+		frame.getContentPane().add(panel_1, BorderLayout.EAST);
+		panel_1.setLayout(new MigLayout("", "[120px,grow][55px]", "[][23px][][][][][][][][][][]"));
+		
+		
 		panel_1.add(lblSaveAndLoad, "cell 0 0 2 1");
 		
-		frmtdtxtfldStarttxt = new JFormattedTextField();
 		frmtdtxtfldStarttxt.setText("Start.txt");
 		panel_1.add(frmtdtxtfldStarttxt, "cell 0 1 2 1,growx");
 		
-		btnLoadFile = new JButton("Load File");
-		btnLoadFile.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		
+		//btnLoadFile.addActionListener(new ActionListener() {
+			//public void actionPerformed(ActionEvent e) {
 				
-			}
-		});
+		//	}
+		//});
 		panel_1.add(btnLoadFile, "cell 0 2 2 1");
 		
-		frmtdtxtfldEndtxt = new JFormattedTextField();
+		
 		frmtdtxtfldEndtxt.setText("End.txt");
 		panel_1.add(frmtdtxtfldEndtxt, "cell 0 4 2 1,growx");
 		
-		btnSaveFile = new JButton("Save File");
+		
 		panel_1.add(btnSaveFile, "cell 0 5");
 		
-		lblControls = new JLabel("Controls");
+		
 		panel_1.add(lblControls, "cell 0 8 2 1");
 		
-		btnNewButton_1 = new JButton("Start");
+		
 		panel_1.add(btnNewButton_1, "cell 0 9,alignx left,aligny top");
 		
-		btnNewButton = new JButton("Stop");
+		
 		panel_1.add(btnNewButton, "cell 1 9,alignx left,aligny top");
+		
+		
+		panel_1.add(tglbtnOnoff, "cell 0 11 2 1");
 	}
 	public JButton getLoad()
 	{
@@ -128,5 +131,13 @@ public class WireWorld {
 	{
 		return frmtdtxtfldEndtxt.getText();
 	}
-
+	public MyPanel getPanel() 
+	{
+		return panel;
+	}
+	public JToggleButton getTglbtnOnoff() 
+	{
+		return tglbtnOnoff;
+	}
+	
 }

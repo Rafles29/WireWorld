@@ -33,6 +33,11 @@ public class MyPanel extends JPanel {
 	public void updateStrip(Strip s)
 	{
 		this.s = s; 
+		super.repaint();
+	}
+	public void showGrid(Strip strip)
+	{
+		drawGrid(s);
 	}
 	public void updateDimensions(int width, int height)
 	{

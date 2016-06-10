@@ -22,7 +22,7 @@ public class Moore implements HeadCounter {
                 }
                 else
                 {
-                    if((x+j)>=0 || (x+j)<strip.getSize() || (y+i)>=0 || (y+i)<strip.getSize())
+                    if((x+j)>=0 && (x+j)<strip.getSize() && (y+i)>=0 && (y+i)<strip.getSize())
                     {
                         if(strip.getState(x+j, y+i) == 1)
                             surr++;

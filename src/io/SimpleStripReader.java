@@ -6,7 +6,8 @@ public class SimpleStripReader {
 	
 	public Strip loadStrip(String s)
 	{
-		return new Strip(10);
+		Strip strip = new Strip(10);
+		return strip;
 	}
 
 }

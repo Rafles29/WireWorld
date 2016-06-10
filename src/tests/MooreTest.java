@@ -13,8 +13,9 @@ public class MooreTest {
 		strip.changeField(5, 4, 1);
 		strip.changeField(5, 5, 1);
 		strip.changeField(7, 4, 1);
+		strip.show();
 		Moore mur = new Moore();
-		assertEquals(3, mur.countHeads(strip, 6, 4));	
+		assertEquals(0, mur.countHeads(strip, 9, 9));	
 		
 	}
 

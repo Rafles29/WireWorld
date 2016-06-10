@@ -16,21 +16,21 @@ public class SimpleRules implements Tribunal {
 
 	public int estimate(Strip strip1, int x, int y) 
 	{
-		HeadCounter hc = new Moore();
-		if(hc.countHeads(strip1, x, y) == 1 || hc.countHeads(strip1, x, y) == 2)
-		{
-			return 1;
-		}
-		else
-		{
+			HeadCounter hc = new Moore();
 			switch(strip1.getState(x, y))
 			{
 				case 0: return 0;
 				case 1: return 2;
 				case 2: return 3;
-				case 3: return 3;
+				case 3: {
+						if(hc.countHeads(strip1, x, y) == 1 || hc.countHeads(strip1, x, y) == 2)
+						{
+							System.out.println("siema");
+							return 1;					
+						}
+						else return 3;
+					}
+				default: return 0;
 			}
-		}
-		return 3;
 	}
 }
