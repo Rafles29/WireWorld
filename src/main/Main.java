@@ -19,9 +19,9 @@ public class Main {
 		strip.changeField(7, 4, 3);
 		strip.changeField(7, 6, 3);
 		strip.changeField(8, 4, 3);
-		strip.changeField(8, 5, 3);
+		strip.changeField(7, 5, 3);
 		strip.changeField(8, 6, 3);
-		//strip.changeField(9, 5, 3);
+		strip.changeField(9, 5, 3);
 		strip.show();		
 		
 		WireWorld wireWorld = new WireWorld(strip);
