@@ -25,7 +25,6 @@ public class SimpleRules implements Tribunal {
 				case 3: {
 						if(hc.countHeads(strip1, x, y) == 1 || hc.countHeads(strip1, x, y) == 2)
 						{
-							System.out.println("siema");
 							return 1;					
 						}
 						else return 3;

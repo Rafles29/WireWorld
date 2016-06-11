@@ -43,7 +43,6 @@ public class WireWorld {
 		lblControls = new JLabel("Controls");
 		btnNewButton_1 = new JButton("Start");
 		btnNewButton = new JButton("Stop");
-		tglbtnOnoff = new JToggleButton("ON/OFF");
 		panel.updateStrip(strip);
 		
 		
@@ -104,8 +103,6 @@ public class WireWorld {
 		
 		panel_1.add(btnNewButton, "cell 1 9,alignx left,aligny top");
 		
-		
-		panel_1.add(tglbtnOnoff, "cell 0 11 2 1");
 	}
 	public JButton getLoad()
 	{
@@ -135,9 +132,4 @@ public class WireWorld {
 	{
 		return panel;
 	}
-	public JToggleButton getTglbtnOnoff() 
-	{
-		return tglbtnOnoff;
-	}
-	
 }
