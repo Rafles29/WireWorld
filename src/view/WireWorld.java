@@ -32,7 +32,7 @@ public class WireWorld {
 	 * Create the application.
 	 */
 	public WireWorld(Strip strip) {
-		frame = new JFrame();
+		frame = new JFrame("WireWorld");
 		panel = new MyPanel();
 		panel_1 = new JPanel();
 		lblSaveAndLoad = new JLabel("Game File");

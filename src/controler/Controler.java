@@ -1,8 +1,6 @@
 package controler;
 
-import java.awt.event.ItemEvent;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
+import java.io.FileNotFoundException;
 
 import io.SimpleStripReader;
 import io.SimpleStripSave;
@@ -103,7 +101,12 @@ public class Controler{
 		
 		wireWorld.getLoad().addActionListener(e -> {
 			SimpleStripReader load = new SimpleStripReader();
-			strip = load.loadStrip(wireWorld.getLoadDestination());
+			try {
+				strip = load.loadStrip(wireWorld.getLoadDestination());
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			wireWorld.getPanel().updateStrip(strip);
 			if(switcher.isAlive()) {
 				switcher.t.interrupt();
@@ -113,7 +116,12 @@ public class Controler{
 		wireWorld.getSave().addActionListener(e -> {
 			if(switcher.isSuspended() || switcher.isFinished() || !switcher.isAlive()) {
 				SimpleStripSave save = new SimpleStripSave();
-				save.saveStrip(wireWorld.getSaveDestination());
+				try {
+					save.saveStrip(strip, wireWorld.getSaveDestination());
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				System.out.println("DUPA");
 			}
 
