@@ -1,6 +1,7 @@
 package rules;
 import model.Strip;
-public class GenMaker {
+public class GenMaker 
+{
 	
 	public GenMaker()
 	{

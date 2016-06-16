@@ -2,7 +2,8 @@ package rules;
 
 import model.Strip;
 
-public class SimpleRules implements Tribunal {
+public class SimpleRules implements Tribunal
+{
 	
 	public SimpleRules()
 	{

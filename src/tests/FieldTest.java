@@ -5,10 +5,12 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class FieldTest {
+public class FieldTest 
+{
 
 	@Test
-	public void test() {
+	public void test() 
+	{
 		Field field = new Field(5);
 		assertEquals(5, field.getState());
 		field.changeState(7);

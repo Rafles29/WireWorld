@@ -1,6 +1,7 @@
 package model;
 
-public class Strip implements Cloneable{
+public class Strip
+{
 	private Field[][] grid;
 	private int size;
 	

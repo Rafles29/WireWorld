@@ -5,7 +5,8 @@ import java.util.Scanner;
 
 import model.Strip;
 
-public class SimpleStripReader {
+public class SimpleStripReader 
+{
 	
 	private int estimateCell(String s)
 	{
@@ -35,7 +36,6 @@ public class SimpleStripReader {
 		Strip strip = new Strip(10);
 		String temp;
 		int x, y;
-		System.out.println(fileLoad);
 		File fr;
 			fr = new File(fileLoad);
 			Scanner scaner = new Scanner(fr);

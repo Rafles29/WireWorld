@@ -9,35 +9,38 @@ import javax.swing.JPanel;
 
 import model.Strip;
 
-public class MyPanel extends JPanel {
+public class MyPanel extends JPanel 
+{
 	
 	private Graphics2D g2d;
 	private int width;
 	private int height;
-	private Strip s;
+	private Strip strip;
 	
-	public MyPanel() {
+	public MyPanel() 
+	{
 		width = 500;
 		height = 500;
 		setPreferredSize(new Dimension(width, height));
-		s = new Strip(10);
+		strip = new Strip(10);
 	}
 
 	@Override
-	protected void paintComponent(Graphics g) {
+	protected void paintComponent(Graphics g) 
+	{
 		super.paintComponent(g);
 		g2d = (Graphics2D) g;
 
-		drawGrid(s);		
+		drawGrid(strip);		
 	}
 	public void updateStrip(Strip s)
 	{
-		this.s = s; 
+		this.strip = s; 
 		super.repaint();
 	}
 	public void showGrid(Strip strip)
 	{
-		drawGrid(s);
+		drawGrid(strip);
 	}
 	public void updateDimensions(int width, int height)
 	{

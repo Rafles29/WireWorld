@@ -6,10 +6,12 @@ import org.junit.Test;
 
 import model.*;
 
-public class StripTest {
+public class StripTest 
+{
 
 	@Test
-	public void test() {
+	public void test() 
+	{
 		Strip strip1 = new Strip(10);
 		assertEquals(strip1.getSize(), 10);
 		

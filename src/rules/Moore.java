@@ -1,7 +1,8 @@
 package rules;
 import model.Strip;
 
-public class Moore implements HeadCounter {
+public class Moore implements HeadCounter 
+{
 	
 	public Moore()
 	{

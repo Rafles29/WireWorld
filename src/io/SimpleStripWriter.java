@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 
 import model.Strip;
 
-public class SimpleStripSave {
+public class SimpleStripWriter {
 	
 	private String estimateCell(int state)
 	{
